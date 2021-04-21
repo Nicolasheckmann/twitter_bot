@@ -17,14 +17,12 @@ end
 
 client = login_twitter()
 
-#methode pour choper 5 handle twitter randomly
-def five_random(array_of_handles)
-    array_of_handles.sample(5)
+
+def follow_tweet(client)
+
+    client.search("#bonjour_monde", result_type:"recent" ).take(20).collect do |user|
+    client.follow(user)
+end
 end
 
-def tweet_sender(array_of_5_random, client)
-    array_of_5_random.each { |handle| client.update("#{handle} Que pensez-vous des bots sur Twitter?!") }
-end
-
-tweet_sender(five_random(journalist_list), client)
-
+follow_tweet(client)
