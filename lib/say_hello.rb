@@ -23,7 +23,7 @@ def five_random(array_of_handles)
 end
 
 def tweet_sender(array_of_5_random, client)
-    array_of_5_random.each { |handle| client.update("#{handle} Que pensez-vous des bots sur Twitter?!") }
+    array_of_5_random.each { |handle| client.update("#bonjour_monde #{handle} Que pensez-vous des bots sur Twitter?!") }
 end
 
 tweet_sender(five_random(journalist_list), client)

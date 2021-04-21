@@ -17,12 +17,10 @@ end
 
 client = login_twitter()
 
-
 def like_tweet(client)
-
     client.search("#bonjour_monde", result_type:"recent" ).take(25).collect do |tweet|
     client.favorite(tweet)
-end
+    end
 end
 
 like_tweet(client)
